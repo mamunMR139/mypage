@@ -1,0 +1,255 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USA Rewards Center</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+}
+
+.header{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+.header h1{
+    font-size:28px;
+}
+
+.header p{
+    margin-top:8px;
+    opacity:.8;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.top{
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    color:white;
+    padding:18px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.content{
+    padding:20px;
+}
+
+.reward{
+    font-size:34px;
+    font-weight:bold;
+    color:#16a34a;
+    margin-bottom:10px;
+}
+
+.btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    text-decoration:none;
+    background:#16a34a;
+    color:white;
+    padding:14px;
+    border-radius:10px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.btn:hover{
+    background:#15803d;
+}
+
+.badge{
+    display:inline-block;
+    background:#eef2ff;
+    color:#4338ca;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:12px;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    padding:30px;
+    color:#666;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🇺🇸 USA Rewards Center</h1>
+    <p>Popular Gift Card & Cash Reward Offers</p>
+</div>
+
+<div class="container">
+
+<div class="grid">
+
+<!-- Taco Bell -->
+<div class="card">
+<div class="top">🌮 Taco Bell $100</div>
+<div class="content">
+<div class="badge">Limited Offer</div>
+<div class="reward">$100</div>
+<a class="btn" href="https://app.hawktrk.com/click?pid=2&offer_id=91&sub2=u653891&sub5=mamunMR">Claim Now</a>
+</div>
+</div>
+
+<!-- PrizeZappy -->
+<div class="card">
+<div class="top">💰 Chance to Win $50K</div>
+<div class="content">
+<div class="badge">Hot Offer</div>
+<div class="reward">$50,000</div>
+<a class="btn" href="https://app.hawktrk.com/click?pid=2&offer_id=18251&sub2=u653891&sub5=mamunMR">Enter Now</a>
+</div>
+</div>
+
+<!-- Chick-fil-A -->
+<div class="card">
+<div class="top">🍗 Chick-fil-A $100</div>
+<div class="content">
+<div class="badge">Gift Card</div>
+<div class="reward">$100</div>
+<a class="btn" href="https://app.hawktrk.com/click?pid=2&offer_id=7&sub2=u653891&sub5=mamunMR">Claim Now</a>
+</div>
+</div>
+
+<!-- Cash App 750 -->
+<div class="card">
+<div class="top">💵 Cash App $750</div>
+<div class="content">
+<div class="badge">Popular</div>
+<div class="reward">$750</div>
+<a class="btn" href="https://app.hawktrk.com/click?pid=2&offer_id=11788&sub2=u653891&sub5=mamunMR">Get Started</a>
+</div>
+</div>
+
+<!-- PayPal -->
+<div class="card">
+<div class="top">🅿️ PayPal $100</div>
+<div class="content">
+<div class="badge">Trending</div>
+<div class="reward">$100</div>
+<a class="btn" href="https://app.hawktrk.com/click?pid=2&offer_id=576&sub2=u653891&sub5=mamunMR">Claim Reward</a>
+</div>
+</div>
+
+<!-- Lululemon -->
+<div class="card">
+<div class="top">🛍️ Lululemon Gift Card</div>
+<div class="content">
+<div class="badge">Gift Card</div>
+<div class="reward">FREE</div>
+<a class="btn" href="https://app.hawktrk.com/click?pid=2&offer_id=15720&sub2=u653891&sub5=mamunMR">Get Offer</a>
+</div>
+</div>
+
+<!-- Reward Spark -->
+<div class="card">
+<div class="top">💸 Cash App $1000</div>
+<div class="content">
+<div class="badge">Top Rated</div>
+<div class="reward">$1000</div>
+<a class="btn" href="https://app.hawktrk.com/click?pid=2&offer_id=16024&sub2=u653891&sub5=mamunMR">Start Here</a>
+</div>
+</div>
+
+<!-- Grocery -->
+<div class="card">
+<div class="top">🛒 Grocery Card</div>
+<div class="content">
+<div class="badge">Best Value</div>
+<div class="reward">$1000</div>
+<a class="btn" href="https://app.hawktrk.com/click?pid=2&offer_id=20830&sub2=u653891&sub5=mamunMR">View Offer</a>
+</div>
+</div>
+
+<!-- GnG CashApp -->
+<div class="card">
+<div class="top">💰 Cash App $750</div>
+<div class="content">
+<div class="badge">Featured</div>
+<div class="reward">$750</div>
+<a class="btn" href="https://app.hawktrk.com/click?pid=2&offer_id=20133&sub2=u653891&sub5=mamunMR">Continue</a>
+</div>
+</div>
+
+<!-- Tax Rewards -->
+<div class="card">
+<div class="top">📑 Tax Rewards</div>
+<div class="content">
+<div class="badge">Exclusive</div>
+<div class="reward">Bonus</div>
+<a class="btn" href="https://app.hawktrk.com/click?pid=2&offer_id=19862&sub2=u653891&sub5=mamunMR">View Details</a>
+</div>
+</div>
+
+<!-- Amazon -->
+<div class="card">
+<div class="top">📦 Amazon $1000</div>
+<div class="content">
+<div class="badge">Most Popular</div>
+<div class="reward">$1000</div>
+<a class="btn" href="https://app.hawktrk.com/click?pid=2&offer_id=19630&sub2=u653891&sub5=mamunMR">Claim Now</a>
+</div>
+</div>
+
+<!-- Coke vs Pepsi -->
+<div class="card">
+<div class="top">🥤 Coke vs Pepsi</div>
+<div class="content">
+<div class="badge">Survey Offer</div>
+<div class="reward">$1000</div>
+<a class="btn" href="https://app.hawktrk.com/click?pid=2&offer_id=18396&sub2=u653891&sub5=mamunMR">Join Now</a>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+🇺🇸 Available for eligible participants. Terms and conditions may apply.
+</div>
+
+</body>
+</html>
+```
