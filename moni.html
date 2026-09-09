@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Find Your Connection</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fff7fa;
+    color:#222;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255,80,130,.18), transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(130,80,255,.15), transparent 30%),
+        linear-gradient(135deg,#fff8fb,#ffeaf2);
+}
+
+.container{
+    width:100%;
+    max-width:1150px;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:55px;
+    align-items:center;
+}
+
+/* LEFT CONTENT */
+.badge{
+    display:inline-block;
+    background:#fff;
+    color:#e83d75;
+    padding:9px 16px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    margin-bottom:22px;
+}
+
+h1{
+    font-size:clamp(45px,6vw,76px);
+    line-height:1.02;
+    letter-spacing:-3px;
+    margin-bottom:24px;
+}
+
+h1 span{
+    color:#ed3d75;
+}
+
+.subtitle{
+    font-size:19px;
+    line-height:1.7;
+    color:#666;
+    max-width:560px;
+    margin-bottom:30px;
+}
+
+/* CTA */
+.cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:17px 32px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff3f78,#e92868);
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:17px;
+    box-shadow:0 15px 35px rgba(233,40,104,.28);
+    transition:.25s;
+}
+
+.cta:hover{
+    transform:translateY(-3px);
+    box-shadow:0 20px 40px rgba(233,40,104,.35);
+}
+
+.cta:active{
+    transform:scale(.97);
+}
+
+/* TRUST */
+.trust{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:25px;
+    color:#777;
+    font-size:14px;
+}
+
+.faces{
+    display:flex;
+}
+
+.faces span{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    border:3px solid #fff;
+    margin-left:-8px;
+    background-size:cover;
+    background-position:center;
+}
+
+.faces span:first-child{
+    margin-left:0;
+    background-image:url("https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100");
+}
+
+.faces span:nth-child(2){
+    background-image:url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100");
+}
+
+.faces span:nth-child(3){
+    background-image:url("https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100");
+}
+
+.faces span:nth-child(4){
+    background-image:url("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100");
+}
+
+/* VISUAL */
+.visual{
+    position:relative;
+    height:620px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* PHONE */
+.phone{
+    width:300px;
+    height:590px;
+    border:10px solid #171717;
+    border-radius:42px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 35px 70px rgba(0,0,0,.22);
+    position:relative;
+    z-index:2;
+}
+
+.phone-top{
+    height:35px;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.notch{
+    width:90px;
+    height:20px;
+    background:#171717;
+    border-radius:0 0 14px 14px;
+}
+
+/* PROFILE */
+.profile{
+    height:555px;
+    position:relative;
+
+    background-image:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.78),
+            rgba(0,0,0,0) 60%
+        ),
+        url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=700");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.profile-info{
+    position:absolute;
+    bottom:85px;
+    left:20px;
+    color:white;
+}
+
+.profile-info h2{
+    font-size:26px;
+    margin-bottom:6px;
+}
+
+.profile-info p{
+    font-size:14px;
+    opacity:.9;
+}
+
+/* ACTION BUTTONS */
+.actions{
+    position:absolute;
+    bottom:18px;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.action{
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    border:0;
+    background:#fff;
+    font-size:22px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    transition:.2s;
+}
+
+.action:hover{
+    transform:scale(1.08);
+}
+
+.like{
+    color:#ef3c76;
+}
+
+/* FLOATING CARDS */
+.float-card{
+    position:absolute;
+    z-index:3;
+    background:white;
+    padding:14px 18px;
+    border-radius:18px;
+    box-shadow:0 18px 45px rgba(0,0,0,.14);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.float-card small{
+    color:#888;
+    font-weight:normal;
+}
+
+.float-card .icon{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#fff0f5;
+    font-size:19px;
+}
+
+.card1{
+    top:105px;
+    left:0;
+}
+
+.card2{
+    right:-5px;
+    bottom:125px;
+}
+
+.card3{
+    top:30px;
+    right:35px;
+}
+
+/* MOBILE */
+@media(max-width:850px){
+
+    .container{
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:20px;
+    }
+
+    .subtitle{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .trust{
+        justify-content:center;
+    }
+
+    .visual{
+        height:600px;
+    }
+
+    .card1{
+        left:5%;
+    }
+
+    .card2{
+        right:3%;
+    }
+
+    .card3{
+        right:8%;
+    }
+}
+
+@media(max-width:500px){
+
+    .hero{
+        padding:30px 15px;
+    }
+
+    h1{
+        font-size:48px;
+        letter-spacing:-2px;
+    }
+
+    .subtitle{
+        font-size:16px;
+    }
+
+    .cta{
+        width:100%;
+        max-width:330px;
+    }
+
+    .phone{
+        width:270px;
+        height:540px;
+    }
+
+    .profile{
+        height:505px;
+    }
+
+    .visual{
+        height:550px;
+        transform:scale(.95);
+    }
+
+    .float-card{
+        font-size:11px;
+        padding:11px;
+    }
+
+    .card1{
+        left:-5px;
+    }
+
+    .card2{
+        right:-5px;
+    }
+
+    .card3{
+        right:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+    <div class="container">
+
+        <!-- LEFT -->
+        <div class="content">
+
+            <div class="badge">
+                ❤️ A better way to connect
+            </div>
+
+            <h1>
+                Meet someone<br>
+                who <span>gets you.</span>
+            </h1>
+
+            <p class="subtitle">
+                Discover interesting people, start meaningful
+                conversations, and see where a genuine connection
+                can take you.
+            </p>
+
+            <!-- OFFER CTA -->
+            <a
+                href="https://boagwj.hotdatezzone.com/?utm_source=da57dc555e50572d&ban=other&j1=1&s1=251359&s2=2257940&s3=Mr"
+                class="cta"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Find Your Match →
+            </a>
+
+            <div class="trust">
+
+                <div class="faces">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <span>
+                    Join people looking for a real connection
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT -->
+        <div class="visual">
+
+            <!-- FLOATING CARD 1 -->
+            <div class="float-card card1">
+
+                <div class="icon">
+                    💬
+                </div>
+
+                <div>
+                    New connection<br>
+                    <small>Someone liked you</small>
+                </div>
+
+            </div>
+
+
+            <!-- FLOATING CARD 2 -->
+            <div class="float-card card3">
+
+                <div class="icon">
+                    ❤️
+                </div>
+
+                <div>
+                    It's a match!
+                </div>
+
+            </div>
+
+
+            <!-- FLOATING CARD 3 -->
+            <div class="float-card card2">
+
+                <div class="icon">
+                    ✨
+                </div>
+
+                <div>
+                    Great chemistry
+                </div>
+
+            </div>
+
+
+            <!-- PHONE -->
+            <div class="phone">
+
+                <div class="phone-top">
+                    <div class="notch"></div>
+                </div>
+
+                <div class="profile">
+
+                    <div class="profile-info">
+
+                        <h2>
+                            Sophia, 27 ✨
+                        </h2>
+
+                        <p>
+                            📍 2 km away · Online now
+                        </p>
+
+                    </div>
+
+
+                    <div class="actions">
+
+                        <button
+                            class="action"
+                            type="button"
+                            onclick="passProfile()"
+                        >
+                            ✕
+                        </button>
+
+                        <button
+                            class="action like"
+                            type="button"
+                            onclick="likeProfile(this)"
+                        >
+                            ♥
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+function likeProfile(button){
+
+    button.innerHTML = "💖";
+
+    button.style.transform = "scale(1.18)";
+
+    setTimeout(function(){
+
+        button.style.transform = "scale(1)";
+
+    },200);
+}
+
+
+function passProfile(){
+
+    const phone = document.querySelector(".phone");
+
+    phone.style.transform = "translateX(-8px)";
+
+    setTimeout(function(){
+
+        phone.style.transform = "translateX(0)";
+
+    },150);
+}
+
+</script>
+
+</body>
+</html>
